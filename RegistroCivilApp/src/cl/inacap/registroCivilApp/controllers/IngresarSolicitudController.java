@@ -90,16 +90,18 @@ public class IngresarSolicitudController extends HttpServlet {
 		
 		String solicitud= request.getParameter("solicitud-select").trim();
 		String numSolicitudOriginal=request.getParameter("solicitudOriginal-txt");
-		if(solicitud.equals("Retiro de Cedula de identidad") && numSolicitudOriginal==null) {
-			errores.add("debe ingresar su numero de solicitud original");
-			request.setAttribute("solicitud", solicitud);
-			int idSolicitud=0;
-			try {
-				idSolicitud=Integer.parseInt(numSolicitudOriginal);
-			} catch (Exception e) {
-				errores.add("el valor de la solicitud original debe ser numerico");
-			}
-		}
+		if(solicitud.equals("Retiro de Cedula de identidad")) {
+			if (numSolicitudOriginal.isEmpty()) {
+				errores.add("Debe ingresar su numero de solicitud original");
+			} else {
+				try {
+					int solicitudOriginal = Integer.parseInt(numSolicitudOriginal);
+					//Como no se definio su uso no creo necesario agregarlo como atributo en de la clase Solicitud.
+				} catch (Exception e) {
+					errores.add("La solicitud original debe ser numerico");
+				}	
+			}	
+		}		
 		
 		if(errores.isEmpty()) {
 			Solicitud solicitudValida = new Solicitud();

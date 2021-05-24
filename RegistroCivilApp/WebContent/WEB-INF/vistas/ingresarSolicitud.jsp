@@ -28,13 +28,13 @@
 					</div>
 					<div class="card-content is-centered">
 						<div class="field ">
-							<label class="label " for="rut-txt">Rut del Cliente</label>
+							<label class="label has-text-centered" for="rut-txt">Rut del Cliente</label>
 							<div class="control">
 								<input type="text" class="input" id="rut-txt" name="rut-txt" />
 							</div>
 						</div>
 						<div class="field">
-							<label class="label" for="nombreCompleto-txt">Nombre Completo</label>
+							<label class="label has-text-centered"  for="nombreCompleto-txt">Nombre Completo</label>
 							<div class="control">
 								<input type="text" class="input" id="nombreCompleto-txt" name="nombreCompleto-txt" />
 							</div>
@@ -52,14 +52,12 @@
 								</div>
 							</div>
 						</div>
-						<c:if test="${solicitud !=null}">
-							<div class="field">
-								<label class="label" for="solicitudOriginal-txt">Numero solicitud original</label>
-								<div class="control">
+						<div class="field">
+							<label class="label has-text-centered"  for="solicitudOriginal-txt">Numero solicitud original</label>
+							<div class="control">
 								<input type="number" class="input" id="solicitudOriginal-txt" name="solicitudOriginal-txt"/>
-								</div>
 							</div>
-						</c:if>	
+						</div>
 					</div>
 					<div class="card-footer">
 						<div class="card-footer-item">
